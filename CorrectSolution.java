@@ -5,44 +5,39 @@ import java.util.Scanner;
 public class CorrectSolution {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
 
-        if (!sc.hasNext()) {
+        if (!in.hasNext()) {
             return;
         }
-        String n = sc.next();
-        if (!sc.hasNext()) {
+        String n = in.next();
+        if (!in.hasNext()) {
             return;
         }
-        String m = sc.next();
+        String m = in.next();
 
-        String correct;
+        char[] digits = n.toCharArray();
+        Arrays.sort(digits);
 
-        if (n.equals("0")) {
-            correct = "0";
-        } else {
-            char[] digits = n.toCharArray();
-            Arrays.sort(digits);
-
-            if (digits[0] == '0') {
-                for (int i = 0; i < digits.length; i++) {
-                    if (digits[i] != '0') {
-                        char temp = digits[0];
-                        digits[0] = digits[i];
-                        digits[i] = temp;
-                        break;
-                    }
+        if (digits.length > 1 && digits[0] == '0') {
+            for (int i = 1; i < digits.length; i++) {
+                if (digits[i] != '0') {
+                    char temp = digits[0];
+                    digits[0] = digits[i];
+                    digits[i] = temp;
+                    break;
                 }
             }
-            correct = new String(digits);
         }
 
-        if (correct.equals(m)) {
+        String correctSmallest = new String(digits);
+
+        if (correctSmallest.equals(m)) {
             System.out.println("OK");
         } else {
             System.out.println("WRONG_ANSWER");
         }
 
-        sc.close();
+        in.close();
     }
 }
