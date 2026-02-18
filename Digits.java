@@ -1,22 +1,40 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Digits {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        if (!sc.hasNextInt())
+            return;
+        int t = sc.nextInt();
 
-        int testCases = in.nextInt();
-        long[][] inputNAndD = new long[testCases][2];
-        for (int i = 0; i < testCases; i++) {
-            inputNAndD[i][0] = in.nextLong();
-            inputNAndD[i][1] = in.nextLong();
+        while (t-- > 0) {
+            long n = sc.nextLong();
+            int d = sc.nextInt();
+
+            ArrayList<Integer> result = new ArrayList<>();
+            result.add(1);
+
+            if (n >= 3 || (d % 3 == 0)) {
+                result.add(3);
+            }
+
+            if (d == 5) {
+                result.add(5);
+            }
+
+            if (n >= 3 || d == 7) {
+                result.add(7);
+            }
+
+            if (n >= 6 || (n >= 3 && d % 3 == 0) || (d % 9 == 0)) {
+                result.add(9);
+            }
+
+            for (int i = 0; i < result.size(); i++) {
+                System.out.print(result.get(i) + (i == result.size() - 1 ? "" : " "));
+            }
+            System.out.println();
         }
-
-        for (int j = 0; j < testCases; j++) {
-
-            System.out.print("1");
-
-        }
-
-        in.close();
+        sc.close();
     }
 }
