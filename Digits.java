@@ -16,6 +16,7 @@ public class Digits {
             System.out.print("1");
 
         }
+
         in.close();
     }
 }
