@@ -1,3 +1,9 @@
+
+/**
+ * @author Aarav Goyal
+ * @since 2026-02-20
+ */
+
 import java.util.Scanner;
 
 public class PhotoShoot {
