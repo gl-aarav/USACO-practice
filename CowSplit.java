@@ -1,16 +1,16 @@
 import java.util.Scanner;
 
-public class CowS {
+public class CowSplit {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        
+
         int T = in.nextInt();
         int K = in.nextInt();
-        
+
         while (T-- > 0) {
             int N = in.nextInt();
             String S = in.next();
-            
+
             if (N % 2 != 0) {
                 System.out.println("-1");
             } else {
