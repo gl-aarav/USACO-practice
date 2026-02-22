@@ -3,8 +3,6 @@ import java.util.Scanner;
 public class HugePile {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        if (!in.hasNextInt())
-            return;
         int t = in.nextInt();
 
         while (t-- > 0) {

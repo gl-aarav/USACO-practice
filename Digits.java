@@ -3,8 +3,6 @@ import java.util.*;
 public class Digits {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        if (!sc.hasNextInt())
-            return;
         int t = sc.nextInt();
 
         while (t-- > 0) {
